@@ -1,0 +1,18 @@
+﻿@model List<QL_Cong_Viec.Models.FlightDto>
+
+<div class="flight-list">
+    @foreach (var flight in Model)
+    {
+        <div class="flight-card">
+            <img src="@flight.ImageUrl" alt="@flight.ArrivalAirport" />
+            <div class="flight-content">
+                <div class="flight-title">@flight.ArrivalAirport</div>
+                <div class="flight-country">@flight.ArrivalCity</div>
+                <div class="flight-detail">
+                    @flight.FlightDate • @flight.DepartureAirport → @flight.ArrivalAirport (@flight.Airline)
+                </div>
+                <span class="flight-price">từ @flight.Price</span>
+            </div>
+        </div>
+    }
+</div>
