@@ -1,8 +1,15 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QL_Cong_Viec.Data;
+using QL_Cong_Viec.Service;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient<FlightService>();
+builder.Services.AddHttpClient<WikiService>();
+
+builder.Services.AddHttpClient<AmadeusService>();
+builder.Services.AddScoped<FlightAggregatorService>();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
