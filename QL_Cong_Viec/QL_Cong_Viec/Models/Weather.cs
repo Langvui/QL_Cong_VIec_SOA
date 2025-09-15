@@ -5,5 +5,6 @@
         public string Temperature { get; set; }
         public double Humidity { get; set; }
         public string Description { get; set; }
+       
     }
 }
