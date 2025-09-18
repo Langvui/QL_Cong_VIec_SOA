@@ -1,4 +1,5 @@
-﻿using QL_Cong_Viec.Models;
+﻿using Humanizer;
+using QL_Cong_Viec.Models;
 
 namespace QL_Cong_Viec.Service
 {
@@ -15,16 +16,27 @@ namespace QL_Cong_Viec.Service
             _wikiService = w;
         }
 
-        public async Task<List<FlightDto>> GetFlightsWithExtrasAsync()
+        public async Task<List<FlightDto>> GetFlightsWithExtrasAsync(string from, string to, string? date = null)
         {
-            var flights = await _flightService.GetFlightsAsync();
+            var flights = await _flightService.GetFlightsAsync(from, to, date);
 
             foreach (var f in flights)
             {
-                // lấy giá
                 if (!string.IsNullOrEmpty(f.DepartureAirport) && !string.IsNullOrEmpty(f.ArrivalAirport))
                 {
-                    f.Price = await _amadeusService.GetPriceAsync(f.DepartureAirport, f.ArrivalAirport);
+                    var priceStr = await _amadeusService.GetPriceAsync(f.DepartureAirport, f.ArrivalAirport);
+
+                    int price;
+                    if (!int.TryParse(priceStr, out price) || price <= 0)
+                    {
+                        price = 1_000_000; // fallback mặc định
+                    }
+
+                    f.Price = price;
+                }
+                else
+                {
+                    f.Price = 1_000_000; // fallback nếu dữ liệu thiếu
                 }
 
                 // lấy ảnh
@@ -36,5 +48,6 @@ namespace QL_Cong_Viec.Service
 
             return flights;
         }
+
     }
 }

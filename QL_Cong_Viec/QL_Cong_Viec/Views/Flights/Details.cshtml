@@ -1,0 +1,12 @@
+﻿@model FlightDto
+
+<div class="flight-detail-page">
+    <h2>@Model.DepartureAirport → @Model.ArrivalAirport</h2>
+    <p><strong>Số hiệu:</strong> @Model.FlightNumber</p>
+    <p><strong>Ngày bay:</strong> @Model.FlightDate</p>
+    <p><strong>Hãng:</strong> @Model.AirlineName</p>
+    <p><strong>Giá:</strong> @Model.Price</p>
+    <img src="@Model.ImageUrl" alt="@Model.ArrivalAirport" />
+
+    <a asp-controller="Flights" asp-action="Index">← Quay lại danh sách</a>
+</div>
