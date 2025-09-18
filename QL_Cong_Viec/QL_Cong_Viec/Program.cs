@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QL_Cong_Viec.Data;
 using QL_Cong_Viec.Service;
@@ -10,16 +10,6 @@ builder.Services.AddHttpClient<WikiService>();
 
 builder.Services.AddHttpClient<AmadeusService>();
 builder.Services.AddScoped<FlightAggregatorService>();
-builder.Services.AddMemoryCache();
-// Thêm session service
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // thời gian timeout
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
-
 
 builder.Services.AddHttpClient<HotelService>();
 
@@ -59,7 +49,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseSession();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
