@@ -127,7 +127,6 @@ D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\bin\Debug\net8.0\runtimes\win\lib\
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.csproj.AssemblyReference.cache
-D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\rpswa.dswa.cache.json
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.GeneratedMSBuildEditorConfig.editorconfig
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.AssemblyInfoInputs.cache
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.AssemblyInfo.cs
@@ -136,9 +135,6 @@ D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.MvcA
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.MvcApplicationPartsAssemblyInfo.cache
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.RazorAssemblyInfo.cache
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.RazorAssemblyInfo.cs
-D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\rjimswa.dswa.cache.json
-D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\scopedcss\bundle\QL_Cong_Viec.styles.css
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\scopedcss\projectbundle\QL_Cong_Viec.bundle.scp.css
@@ -153,3 +149,4 @@ D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\refint\QL_Cong_Vi
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.pdb
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.genruntimeconfig.cache
 D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\ref\QL_Cong_Viec.dll
+D:\QL_Cong_VIec_SOA\QL_Cong_Viec\QL_Cong_Viec\obj\Debug\net8.0\QL_Cong_Viec.sourcelink.json
