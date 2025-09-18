@@ -1,59 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using NHibernate.Mapping;
-using QL_Cong_Viec.Models;
 using QL_Cong_Viec.Service;
 
-public class FlightsController : Controller
+namespace QL_Cong_Viec.Controllers
 {
-    private readonly FlightAggregatorService _aggregator;
-    private readonly IMemoryCache _cache;
-
-    public FlightsController(FlightAggregatorService aggregator, IMemoryCache cache)
+    public class FlightsController : Controller
     {
-        _aggregator = aggregator;
-        _cache = cache;
-    }
+        private readonly FlightAggregatorService _aggregator;
 
-    public IActionResult Index(List<FlightDto>? flights = null)
-    {
-        return View(flights);
-    }
 
-  
-    [HttpGet]
-    public async Task<IActionResult> Search(string tripType, string from, string to, string depart, string? @return, string passengers)
 
-    {
-        string cacheKey = $"flights_{from}_{to}";
-        if (!_cache.TryGetValue(cacheKey, out List<FlightDto>? flights))
+        public FlightsController(FlightAggregatorService aggregator)
         {
-            flights = await _aggregator.GetFlightsWithExtrasAsync(from, to);
+            _aggregator = aggregator;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var flights = await _aggregator.GetFlightsWithExtrasAsync();
 
-            // Cache 5 phút
-            _cache.Set(cacheKey, flights, TimeSpan.FromMinutes(5));
+            return View(flights);
         }
 
-        // Lưu lại key để Details lấy ra
-        HttpContext.Session.SetString("lastCacheKey", cacheKey);
-        ViewData["to"] = to;
-        ViewData["from"] = from;
-
-        return View("Index", flights);
-    }
-
-    public IActionResult Details(string id)
-    {
-        var cacheKey = HttpContext.Session.GetString("lastCacheKey");
-        if (!string.IsNullOrEmpty(cacheKey) && _cache.TryGetValue(cacheKey, out List<FlightDto>? flights))
-        {
-            var flight = flights?.FirstOrDefault(f => f.FlightNumber == id);
-            if (flight != null)
-            {
-                return View(flight);
-            }
-        }
-
-        return NotFound();
     }
 }
