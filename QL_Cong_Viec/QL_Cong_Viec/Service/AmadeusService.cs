@@ -10,6 +10,8 @@ namespace QL_Cong_Viec.Service
         private readonly string _clientSecret;
         private string? _accessToken;
 
+        private const decimal UsdToVndRate = 25000m; // tỉ giá cố định
+
         public AmadeusService(HttpClient httpClient, IConfiguration config)
         {
             _httpClient = httpClient;
@@ -50,7 +52,15 @@ namespace QL_Cong_Viec.Service
 
             if (doc.RootElement.TryGetProperty("data", out var data) && data.GetArrayLength() > 0)
             {
-                return data[0].GetProperty("price").GetProperty("total").GetString() + " USD";
+                var usdPrice = data[0].GetProperty("price").GetProperty("total").GetString();
+
+                if (decimal.TryParse(usdPrice, out var usd))
+                {
+                    decimal vnd = usd * UsdToVndRate;
+                    return $"{vnd:N0} Đ";
+                }
+
+                return usdPrice + " USD";
             }
 
             return null;
