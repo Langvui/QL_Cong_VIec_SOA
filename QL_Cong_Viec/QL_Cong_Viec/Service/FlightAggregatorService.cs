@@ -1,53 +1,107 @@
 ﻿using Humanizer;
+using QL_Cong_Viec.ESB.Interface;
+using QL_Cong_Viec.ESB.Models;
 using QL_Cong_Viec.Models;
 
 namespace QL_Cong_Viec.Service
 {
+
     public class FlightAggregatorService
     {
-        private readonly FlightService _flightService;
-        private readonly AmadeusService _amadeusService;
-        private readonly WikiService _wikiService;
+        private readonly IServiceBus _serviceBus;
+        private readonly ILogger<FlightAggregatorService> _logger;
 
-        public FlightAggregatorService(FlightService f, AmadeusService a, WikiService w)
+        public FlightAggregatorService(IServiceBus serviceBus, ILogger<FlightAggregatorService> logger)
         {
-            _flightService = f;
-            _amadeusService = a;
-            _wikiService = w;
+            _serviceBus = serviceBus;
+            _logger = logger;
         }
 
-        public async Task<List<FlightDto>> GetFlightsWithExtrasAsync(string from, string to, string? date = null)
+        public async Task<List<FlightDto>> GetFlightsWithExtrasAsync(string from,string to)
         {
-            var flights = await _flightService.GetFlightsAsync(from, to, date);
-
-            foreach (var f in flights)
+            try
             {
-                if (!string.IsNullOrEmpty(f.DepartureAirport) && !string.IsNullOrEmpty(f.ArrivalAirport))
+                // Get flights through ESB
+                var flightRequest = new ServiceRequest
                 {
-                    var priceStr = await _amadeusService.GetPriceAsync(f.DepartureAirport, f.ArrivalAirport);
+                    ServiceName = "FlightService",
+                    Operation = "GetFlights",
+                    SourceService = "FlightAggregator"
+                };
 
-                    int price;
-                    if (!int.TryParse(priceStr, out price) || price <= 0)
+                var flights = await _serviceBus.SendRequestAsync<List<FlightDto>>(flightRequest);
+
+                // Process each flight
+                var tasks = flights.Select(async flight =>
+                {
+                    // Get price through ESB
+                    if (!string.IsNullOrEmpty(flight.DepartureAirport) && !string.IsNullOrEmpty(flight.ArrivalAirport))
                     {
-                        price = 1_000_000; // fallback mặc định
+                        try
+                        {
+                            var priceRequest = new ServiceRequest
+                            {
+                                ServiceName = "AmadeusService",
+                                Operation = "GetPrice",
+                                SourceService = "FlightAggregator",
+                                Parameters = new Dictionary<string, object>
+                                {
+                                    { "depIata", flight.DepartureAirport },
+                                    { "arrIata", flight.ArrivalAirport }
+                                }
+                            };
+
+                            var priceString = await _serviceBus.SendRequestAsync<string>(priceRequest);
+                            if (int.TryParse(priceString, out var price))
+                            {
+                                flight.Price = price;
+                            }
+                            else
+                            {
+                                _logger.LogWarning("Invalid price format: {price}", priceString);
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.LogWarning(ex, "Failed to get price for flight {dep}-{arr}",
+                                flight.DepartureAirport, flight.ArrivalAirport);
+                        }
                     }
 
-                    f.Price = price;
-                }
-                else
-                {
-                    f.Price = 1_000_000; // fallback nếu dữ liệu thiếu
-                }
+                    // Get image through ESB
+                    if (!string.IsNullOrEmpty(flight.ArrivalAirport))
+                    {
+                        try
+                        {
+                            var imageRequest = new ServiceRequest
+                            {
+                                ServiceName = "WikiService",
+                                Operation = "GetImageUrl",
+                                SourceService = "FlightAggregator",
+                                Parameters = new Dictionary<string, object>
+                                {
+                                    { "keyword", flight.ArrivalAirport }
+                                }
+                            };
 
-                // lấy ảnh
-                if (!string.IsNullOrEmpty(f.ArrivalAirport))
-                {
-                    f.ImageUrl = await _wikiService.GetImageUrlAsync(f.ArrivalAirport);
-                }
+                            flight.ImageUrl = await _serviceBus.SendRequestAsync<string>(imageRequest);
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.LogWarning(ex, "Failed to get image for {airport}", flight.ArrivalAirport);
+                        }
+                    }
+                });
+
+                await Task.WhenAll(tasks);
+                return flights;
             }
-
-            return flights;
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetFlightsWithExtrasAsync");
+                throw;
+            }
         }
-
     }
 }

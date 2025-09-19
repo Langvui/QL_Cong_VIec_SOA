@@ -18,15 +18,15 @@
         <div class="search-container">
             <div class="trip-type-selector">
                 <label>
-                    <input type="radio" name="tripType" value="round" />
+                    <input type="radio" value="round" />
                     Khứ hồi
                 </label>
                 <label>
-                    <input type="radio" name="tripType" value="oneway" checked />
+                    <input type="radio"  value="oneway" checked />
                     Một chiều
                 </label>
                 <label>
-                    <input type="radio" name="tripType" value="multi" />
+                    <input type="radio" value="multi" />
                     Nhiều thành phố
                 </label>
             </div>
@@ -62,7 +62,7 @@
                 <div class="search-input">
                     <label class="input-label" for="depart">Ngày đi</label>
                     <input id="depart"
-                           name="depart"
+                          
                            type="date"
                            value="@DateTime.Now.ToString("yyyy-MM-dd")"
                            required />
@@ -71,14 +71,14 @@
                 <!-- Return -->
                 <div class="search-input">
                     <label class="input-label" for="return">Quay về</label>
-                    <input id="return" name="return" type="date" value="@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")" />
+                    <input id="return"  type="date" value="@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")" />
                 </div>
 
                 <!-- Passengers -->
                 <div class="search-input">
                     <label class="input-label" for="passengers">Du khách và hạng không</label>
                     <input id="passengers"
-                           name="passengers"
+                          
                            type="text"
                            value="1 người lớn, Phổ thông"
                            readonly />
