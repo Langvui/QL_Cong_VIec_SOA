@@ -1,0 +1,125 @@
+﻿@model QL_Cong_Viec.ViewModels.HotelSearchViewModel
+
+<h2 class="mb-4 text-primary fw-bold">Tìm khách sạn</h2>
+
+<form asp-action="Index" method="post" class="mb-4 bg-light p-3 rounded shadow-sm">
+    <div class="row g-3 align-items-end">
+        <div class="col-md-3">
+            <label class="form-label text-primary fw-semibold">Địa điểm</label>
+            <input asp-for="Location" class="form-control border-primary" placeholder="Nhập điểm đến" required />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label text-primary fw-semibold">Ngày đến</label>
+            <input asp-for="CheckIn" type="date" class="form-control border-primary" required />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label text-primary fw-semibold">Ngày về</label>
+            <input asp-for="CheckOut" type="date" class="form-control border-primary" required />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label text-primary fw-semibold">Số người</label>
+            <input asp-for="Adults" type="number" min="1" class="form-control border-primary" placeholder="Người lớn" />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label text-primary fw-semibold">Số phòng</label>
+            <input asp-for="Rooms" type="number" min="1" class="form-control border-primary" placeholder="Phòng" />
+        </div>
+        <div class="col-md-1">
+            <button type="submit" class="btn btn-primary w-100 fw-bold">Tìm</button>
+        </div>
+    </div>
+</form>
+
+@if (Model.Results != null)
+{
+    @if (Model.Results.Any())
+    {
+        <div class="alert alert-info fw-semibold text-primary shadow-sm">
+            Tìm thấy @Model.Results.Count khách sạn
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                @foreach (var hotel in Model.Results)
+                {
+                    <div class="card mb-3 shadow-sm border border-primary rounded-3">
+                        @if (!string.IsNullOrEmpty(hotel.Image))
+                        {
+                            <img src="@hotel.Image" class="card-img-top rounded-top" alt="hotel image" style="height: 200px; object-fit: cover;" />
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">@hotel.Name</h5>
+                            @if (!string.IsNullOrEmpty(hotel.Address) && hotel.Address != "N/A")
+                            {
+                                <p class="text-muted">@hotel.Address</p>
+                            }
+                            <p class="text-success fw-semibold">Giá: <strong>@hotel.Price</strong></p>
+                            @if (hotel.Latitude != 0 && hotel.Longitude != 0)
+                            {
+                                <small class="text-muted">Tọa độ: @hotel.Latitude, @hotel.Longitude</small>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-md-5">
+                <div id="map" style="height:600px; border: 2px solid #0d6efd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);"></div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning shadow-sm border border-primary-subtle">
+            <h4 class="text-primary">Không tìm thấy khách sạn</h4>
+            <p>Vui lòng thử:</p>
+            <ul>
+                <li>Kiểm tra lại tên địa điểm</li>
+                <li>Thử tìm kiếm với tên tiếng Anh</li>
+                <li>Chọn ngày khác</li>
+            </ul>
+        </div>
+    }
+}
+
+@section Scripts {
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script>
+        @if (Model.Results != null && Model.Results.Any())
+        {
+            <text>
+            var hotels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
+                Model.Results,
+                new System.Text.Json.JsonSerializerOptions {
+                    PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase
+                }
+            ));
+
+            if (hotels && hotels.length > 0) {
+                var validHotels = hotels.filter(h => h.latitude && h.longitude && h.latitude !== 0 && h.longitude !== 0);
+
+                if (validHotels.length > 0) {
+                    var map = L.map('map').setView([validHotels[0].latitude, validHotels[0].longitude], 14);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap'
+                    }).addTo(map);
+
+                    var bounds = [];
+                    validHotels.forEach(h => {
+                        var marker = L.marker([h.latitude, h.longitude]).addTo(map);
+                        marker.bindPopup(`<b style="color:#0d6efd">${h.name}</b><br/><span style="color:green">Giá: ${h.price}</span>`);
+                        bounds.push([h.latitude, h.longitude]);
+                    });
+
+                    if (bounds.length > 1) {
+                        map.fitBounds(bounds);
+                    }
+                } else {
+                    document.getElementById('map').innerHTML =
+                        '<div class="alert alert-info">Không có dữ liệu tọa độ để hiển thị bản đồ</div>';
+                }
+            }
+            </text>
+        }
+    </script>
+}
