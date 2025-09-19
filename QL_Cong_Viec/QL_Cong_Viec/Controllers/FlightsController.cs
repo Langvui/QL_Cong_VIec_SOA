@@ -1,18 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.IdentityModel.Tokens;
 using NHibernate.Mapping;
+using QL_Cong_Viec.ESB.Services;
 using QL_Cong_Viec.Models;
 using QL_Cong_Viec.Service;
 
 public class FlightsController : Controller
 {
     private readonly FlightAggregatorService _aggregator;
-    private readonly IMemoryCache _cache;
+    private readonly HealthCheckService _healthCheckService;
 
-    public FlightsController(FlightAggregatorService aggregator, IMemoryCache cache)
+    public FlightsController(FlightAggregatorService aggregator, HealthCheckService healthCheckService)
     {
         _aggregator = aggregator;
-        _cache = cache;
+        _healthCheckService = healthCheckService;
     }
 
     public IActionResult Index(List<FlightDto>? flights = null)
@@ -20,40 +22,19 @@ public class FlightsController : Controller
         return View(flights);
     }
 
-  
-    [HttpGet]
-    public async Task<IActionResult> Search(string tripType, string from, string to, string depart, string? @return, string passengers)
-
+    [HttpGet("Search")]
+    public async Task<IActionResult> Search(FlightSearchDto flightSearch)
     {
-        string cacheKey = $"flights_{from}_{to}";
-        List<FlightDto> flights;
+        if (string.IsNullOrEmpty(flightSearch.From) || string.IsNullOrEmpty(flightSearch.To))
+            return BadRequest("Thiếu tham số from hoặc to");
 
-        if (!_cache.TryGetValue(cacheKey, out flights))
-        {
-            // Lấy flights VÀ set price cùng lúc
-            flights = await _aggregator.GetFlightsWithExtrasAsync(from, to);
-            // Cache AFTER setting price
-            _cache.Set(cacheKey, flights, TimeSpan.FromMinutes(5));
-        }
-
-        HttpContext.Session.SetString("lastCacheKey", cacheKey);
-        ViewData["to"] = to;
-        ViewData["from"] = from;
+        var flights = await _aggregator.GetFlightsWithExtrasAsync(flightSearch.From,flightSearch.To);
         return View("Index", flights);
     }
 
-    public IActionResult Details(string id)
+    public async Task<IActionResult> Health()
     {
-        var cacheKey = HttpContext.Session.GetString("lastCacheKey");
-        if (!string.IsNullOrEmpty(cacheKey) && _cache.TryGetValue(cacheKey, out List<FlightDto>? flights))
-        {
-            var flight = flights?.FirstOrDefault(f => f.FlightNumber == id);
-            if (flight != null)
-            {
-                return View(flight);
-            }
-        }
-
-        return NotFound();
+        var healthChecks = await _healthCheckService.GetAllServiceHealthAsync();
+        return Json(healthChecks);
     }
 }

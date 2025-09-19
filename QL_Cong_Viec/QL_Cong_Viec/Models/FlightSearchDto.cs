@@ -10,10 +10,6 @@ namespace QL_Cong_Viec.Models
         [Required]
         public string? To { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
-        public DateTime Depart { get; set; }
-
  
     }
 }
