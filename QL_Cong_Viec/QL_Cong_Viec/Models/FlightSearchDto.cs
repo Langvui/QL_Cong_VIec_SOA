@@ -13,5 +13,7 @@ namespace QL_Cong_Viec.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime Depart { get; set; }
+
+ 
     }
 }
