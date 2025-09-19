@@ -26,19 +26,19 @@ public class FlightsController : Controller
 
     {
         string cacheKey = $"flights_{from}_{to}";
-        if (!_cache.TryGetValue(cacheKey, out List<FlightDto>? flights))
-        {
-            flights = await _aggregator.GetFlightsWithExtrasAsync(from, to);
+        List<FlightDto> flights;
 
-            // Cache 5 phút
+        if (!_cache.TryGetValue(cacheKey, out flights))
+        {
+            // Lấy flights VÀ set price cùng lúc
+            flights = await _aggregator.GetFlightsWithExtrasAsync(from, to);
+            // Cache AFTER setting price
             _cache.Set(cacheKey, flights, TimeSpan.FromMinutes(5));
         }
 
-        // Lưu lại key để Details lấy ra
         HttpContext.Session.SetString("lastCacheKey", cacheKey);
         ViewData["to"] = to;
         ViewData["from"] = from;
-
         return View("Index", flights);
     }
 
