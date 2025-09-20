@@ -4,12 +4,11 @@ namespace QL_Cong_Viec.Service
 {
     public class WikiService
     {
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient _http;
 
-        // ✅ Thay đổi: Dùng IHttpClientFactory thay vì HttpClient
-        public WikiService(IHttpClientFactory httpClientFactory)
+        public WikiService(HttpClient http)
         {
-            _httpClient = httpClientFactory.CreateClient();
+            _http = http;
         }
 
         public async Task<string?> GetImageUrlAsync(string keyword)
@@ -19,7 +18,7 @@ namespace QL_Cong_Viec.Service
             var searchRequest = new HttpRequestMessage(HttpMethod.Get, searchUrl);
             searchRequest.Headers.UserAgent.ParseAdd("MyFlightApp/1.0 (contact: youremail@example.com)");
 
-            var searchResp = await _httpClient.SendAsync(searchRequest);
+            var searchResp = await _http.SendAsync(searchRequest);
             if (!searchResp.IsSuccessStatusCode) return null;
 
             var searchJson = await searchResp.Content.ReadAsStringAsync();
@@ -42,7 +41,7 @@ namespace QL_Cong_Viec.Service
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             request.Headers.UserAgent.ParseAdd("MyFlightApp/1.0 (contact: youremail@example.com)");
 
-            var response = await _httpClient.SendAsync(request);
+            var response = await _http.SendAsync(request);
             if (!response.IsSuccessStatusCode) return null;
 
             var json = await response.Content.ReadAsStringAsync();

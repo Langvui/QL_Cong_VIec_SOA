@@ -1,109 +1,5 @@
 ﻿@model List<QL_Cong_Viec.Models.FlightDto>
 
-@{
-    ViewData["Title"] = "Tìm kiếm chuyến bay";
-}
-    <div class="ocean-bg"></div>
-    <div class="wave-overlay"></div>
-   
-
-    <!-- Main Content -->
-
-
-<div class="bottomheader">
-    <form class="main-content" asp-action="Search" asp-controller="Flights" method="get">
-        <h1 class="hero-title">
-            Vé máy bay giá rẻ nhất đi muôn nơi, từ bất kỳ đâu
-        </h1>
-        <div class="search-container">
-            <div class="trip-type-selector">
-                <label>
-                    <input type="radio" value="round" />
-                    Khứ hồi
-                </label>
-                <label>
-                    <input type="radio"  value="oneway" checked />
-                    Một chiều
-                </label>
-                <label>
-                    <input type="radio" value="multi" />
-                    Nhiều thành phố
-                </label>
-            </div>
-            <div class="search-form">
-                <!-- From -->
-                <div class="search-input from-input">
-                    <label class="input-label" for="from">Từ</label>
-                    <input id="from"
-                           value="@ViewData["from"]"
-                           type="text"
-                           placeholder="Việt Nam (VN)"
-                           required
-                           autocomplete="off" />
-                    <input type="hidden" id="fromIata" name="from" />
-
-                    <ul id="from-suggestions" class="suggestions"></ul>
-                </div>
-
-                <!-- To -->
-                <div class="search-input">
-                    <label class="input-label" for="to">Đến</label>
-                    <input id="to"
-                            value ="@ViewData["to"]"
-                           type="text"
-                           placeholder="Quốc gia, thành phố hoặc sân bay"
-                           required
-                           autocomplete="off" />
-                    <input type="hidden" id="toIata" name="to" />
-                    <ul id="to-suggestions" class="suggestions"></ul>
-                </div>
-
-                <!-- Depart -->
-                <div class="search-input">
-                    <label class="input-label" for="depart">Ngày đi</label>
-                    <input id="depart"
-                          
-                           type="date"
-                           value="@DateTime.Now.ToString("yyyy-MM-dd")"
-                           required />
-                </div>
-
-                <!-- Return -->
-                <div class="search-input">
-                    <label class="input-label" for="return">Quay về</label>
-                    <input id="return"  type="date" value="@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")" />
-                </div>
-
-                <!-- Passengers -->
-                <div class="search-input">
-                    <label class="input-label" for="passengers">Du khách và hạng không</label>
-                    <input id="passengers"
-                          
-                           type="text"
-                           value="1 người lớn, Phổ thông"
-                           readonly />
-                </div>
-
-                <!-- Submit -->
-                <div>
-                    <button class="search-btn" id="btnSearch" type="submit">Tìm kiếm</button>
-                </div>
-            </div>
-
-            <!-- Options -->
-            <div class="additional-options">
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" id="nearby1" name="nearbyDepart" />
-                    <label for="nearby1">Thêm các sân bay gần đây (đi)</label>
-                </div>
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" id="nearby2" name="nearbyArrive" />
-                    <label for="nearby2">Thêm các sân bay gần đây (đến)</label>
-                </div>
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" id="direct" name="direct" />
-                    <label for="direct">Chuyến bay thẳng</label>
-
 <div class="flight-list">
     @foreach (var flight in Model)
     {
@@ -114,7 +10,6 @@
                 <div class="flight-country">@flight.ArrivalCity</div>
                 <div class="flight-detail">
                     @flight.FlightDate • @flight.DepartureAirport → @flight.ArrivalAirport (@flight.Airline)
-
                 </div>
                 <span class="flight-price">từ @flight.Price</span>
             </div>
