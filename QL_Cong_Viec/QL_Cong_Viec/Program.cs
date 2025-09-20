@@ -1,4 +1,4 @@
-﻿
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QL_Cong_Viec.Data;
@@ -24,6 +24,14 @@ builder.Services.AddSession(options =>
 builder.Services.AddHttpClient<FlightService>();
 builder.Services.AddHttpClient<WikiService>();
 builder.Services.AddHttpClient<AmadeusService>();
+
+builder.Services.AddHttpClient<FlightService>();
+builder.Services.AddHttpClient<WikiService>();
+
+builder.Services.AddHttpClient<AmadeusService>();
+builder.Services.AddScoped<FlightAggregatorService>();
+
+
 builder.Services.AddHttpClient<HotelService>();
 
 // Add existing services
@@ -109,6 +117,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication(); // Add this for Identity
+
 app.UseAuthorization();
 
 // Add health check endpoint for ESB services

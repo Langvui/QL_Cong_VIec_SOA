@@ -103,83 +103,21 @@
                 <div class="checkbox-wrapper">
                     <input type="checkbox" id="direct" name="direct" />
                     <label for="direct">Chuyến bay thẳng</label>
+
+<div class="flight-list">
+    @foreach (var flight in Model)
+    {
+        <div class="flight-card">
+            <img src="@flight.ImageUrl" alt="@flight.ArrivalAirport" />
+            <div class="flight-content">
+                <div class="flight-title">@flight.ArrivalAirport</div>
+                <div class="flight-country">@flight.ArrivalCity</div>
+                <div class="flight-detail">
+                    @flight.FlightDate • @flight.DepartureAirport → @flight.ArrivalAirport (@flight.Airline)
+
                 </div>
+                <span class="flight-price">từ @flight.Price</span>
             </div>
         </div>
-    </form>
+    }
 </div>
-
-
-    <main class="container">
-        <div class="contatner-header">
-            <h1 class="main-title">
-                Khám phá mọi nơi từ Th 5 18 đến Th 5 25 Tháng 9
-            </h1>
-
-            <div class="filter-navigation">
-                <button class="arrow-btn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12Z" />
-                    </svg>
-                </button>
-
-                <div class="button-navigation">
-                    <a href="#" class="nav-btn">Gần</a>
-                    <a href="#" class="nav-btn active">Các điểm đến ít được chú ý</a>
-                    <a href="#" class="nav-btn">Bãi biển</a>
-                    <a href="#" class="nav-btn">Nghệ thuật và văn hóa</a>
-                    <a href="#" class="nav-btn">Thức ăn ngon</a>
-                    <a href="#" class="nav-btn">Những chuyến phiêu lưu ngoài trời</a>
-                    <a href="#" class="nav-btn">Cuộc sống về đêm và hoạt động giải trí</a>
-                </div>
-
-                <button class="arrow-btn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12Z" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-    <div class="destinations-grid">
-
-        @if (Model != null && Model.Any())
-        {
-      
-                @foreach (var flight in Model)
-                {
-                <a asp-action="Details" asp-controller="Flights" class="destination-card"
-                   asp-route-id="@flight.FlightNumber.ToString()">
-
-                    <img src="@flight.ImageUrl" alt="@flight.ArrivalAirport" class="card-image" />
-               
-                        <div class="card-content">
-                            <h3 class="destination-name">@flight.ArrivalAirport</h3>
-                            <div class="flight-info">
-                                <span class="flight-text">Các chuyến bay có giá từ</span>
-                                <div>
-                                    <div class="price">
-                                        @string.Format("{0:N0} ₫", new Random().Next(1000000, 3000000))
-                                    </div>
-                                    <div class="price-label">
-                                        @(flight.DepartureIata == flight.ArrivalIata ? "Trực tiếp" : "Quá cảnh")
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                }
-
-        }
-        else
-        {
-            <div class="no-data">
-                <p>Không có chuyến bay nào để hiển thị.</p>
-            </div>
-        }
-
-    </div>
-
-    </main>
-
-  

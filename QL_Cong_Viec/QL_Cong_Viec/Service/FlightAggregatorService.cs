@@ -1,6 +1,9 @@
+
 ﻿using QL_Cong_Viec.ESB.Interface;
 using QL_Cong_Viec.ESB.Models;
 using QL_Cong_Viec.Models;
+
+﻿using QL_Cong_Viec.Models;
 
 namespace QL_Cong_Viec.Service
 {
@@ -14,6 +17,7 @@ namespace QL_Cong_Viec.Service
             _serviceBus = serviceBus;
             _logger = logger;
         }
+
 
         public async Task<List<FlightDto>> GetFlightsWithExtrasAsync(string from, string to)
         {
@@ -103,6 +107,19 @@ namespace QL_Cong_Viec.Service
                                     { "keyword", flight.ArrivalAirport }
                                 }
                             };
+
+        public async Task<List<FlightDto>> GetFlightsWithExtrasAsync()
+        {
+            var flights = await _flightService.GetFlightsAsync();
+
+            foreach (var f in flights)
+            {
+                // lấy giá
+                if (!string.IsNullOrEmpty(f.DepartureAirport) && !string.IsNullOrEmpty(f.ArrivalAirport))
+                {
+                    f.Price = await _amadeusService.GetPriceAsync(f.DepartureAirport, f.ArrivalAirport);
+                }
+
 
                             flight.ImageUrl = await _serviceBus.SendRequestAsync<string>(imageRequest);
                         }
