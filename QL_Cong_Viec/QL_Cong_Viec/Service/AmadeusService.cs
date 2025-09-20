@@ -9,12 +9,12 @@ namespace QL_Cong_Viec.Service
         private readonly string _clientId;
         private readonly string _clientSecret;
         private string? _accessToken;
+        private const decimal UsdToVndRate = 25000m;
 
-        private const decimal UsdToVndRate = 25000m; // tỉ giá cố định
-
-        public AmadeusService(HttpClient httpClient, IConfiguration config)
+        // ✅ Thay đổi: Dùng IHttpClientFactory thay vì HttpClient
+        public AmadeusService(IHttpClientFactory httpClientFactory, IConfiguration config)
         {
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.CreateClient();
             _clientId = config["Amadeus:ClientId"] ?? "";
             _clientSecret = config["Amadeus:ClientSecret"] ?? "";
         }

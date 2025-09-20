@@ -10,7 +10,16 @@ using QL_Cong_Viec.Extensions; // For ESB extension methods
 using QL_Cong_Viec.Service;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient();
 
+// ✅ Thêm Session và Memory Cache
+builder.Services.AddMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 // Add HttpClients for existing services
 builder.Services.AddHttpClient<FlightService>();
 builder.Services.AddHttpClient<WikiService>();
@@ -93,7 +102,7 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios
     app.UseHsts();
 }
-
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
