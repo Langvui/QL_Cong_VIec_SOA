@@ -9,12 +9,10 @@ namespace QL_Cong_Viec.Service
         private readonly string _clientId;
         private readonly string _clientSecret;
         private string? _accessToken;
-        private const decimal UsdToVndRate = 25000m;
 
-        // ✅ Thay đổi: Dùng IHttpClientFactory thay vì HttpClient
-        public AmadeusService(IHttpClientFactory httpClientFactory, IConfiguration config)
+        public AmadeusService(HttpClient httpClient, IConfiguration config)
         {
-            _httpClient = httpClientFactory.CreateClient();
+            _httpClient = httpClient;
             _clientId = config["Amadeus:ClientId"] ?? "";
             _clientSecret = config["Amadeus:ClientSecret"] ?? "";
         }
@@ -52,15 +50,7 @@ namespace QL_Cong_Viec.Service
 
             if (doc.RootElement.TryGetProperty("data", out var data) && data.GetArrayLength() > 0)
             {
-                var usdPrice = data[0].GetProperty("price").GetProperty("total").GetString();
-
-                if (decimal.TryParse(usdPrice, out var usd))
-                {
-                    decimal vnd = usd * UsdToVndRate;
-                    return $"{vnd:N0} Đ";
-                }
-
-                return usdPrice + " USD";
+                return data[0].GetProperty("price").GetProperty("total").GetString() + " USD";
             }
 
             return null;
