@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\views\\hotels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\views\\hotels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\views\\flights\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\views\\flights\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\views\\flights\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\views\\flights\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\wwwroot\\css\\stylesearch.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\wwwroot\\css\\stylesearch.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\wwwroot\\image\\wlop3.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\wwwroot\\image\\wlop3.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -17,14 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\views\\hotels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\views\\hotels\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\views\\flights\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|solutionrelative:ql_cong_viec\\views\\flights\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C00911B-3FE9-4969-8746-60A5BB818CFF}|QL_Cong_Viec\\QL_Cong_Viec.csproj|d:\\ql_cong_viec_soa\\ql_cong_viec\\ql_cong_viec\\controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,11 +118,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "QL_Cong_Viec\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "QL_Cong_Viec\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-21T06:08:04.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "QL_Cong_Viec\\wwwroot\\css\\style.css",
+              "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "QL_Cong_Viec\\wwwroot\\css\\style.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-21T06:08:02.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "styleSearch.css",
+              "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\css\\styleSearch.css",
+              "RelativeDocumentMoniker": "QL_Cong_Viec\\wwwroot\\css\\styleSearch.css",
+              "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\css\\styleSearch.css",
+              "RelativeToolTip": "QL_Cong_Viec\\wwwroot\\css\\styleSearch.css",
+              "ViewState": "AgIAAD4EAAAAAAAAAAAowGAEAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-21T06:07:59.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "wlop3.jpg - Bitmap [800x400, 24 bit, JPG]",
+              "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\image\\wlop3.jpg",
+              "RelativeDocumentMoniker": "QL_Cong_Viec\\wwwroot\\image\\wlop3.jpg",
+              "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\wwwroot\\image\\wlop3.jpg - Bitmap [800x400, 24 bit, JPG]",
+              "RelativeToolTip": "QL_Cong_Viec\\wwwroot\\image\\wlop3.jpg - Bitmap [800x400, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-09-21T06:07:11.731Z",
+              "EditorCaption": " - Bitmap [800x400, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Views\\Flights\\Details.cshtml",
+              "RelativeDocumentMoniker": "QL_Cong_Viec\\Views\\Flights\\Details.cshtml",
+              "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Views\\Flights\\Details.cshtml",
+              "RelativeToolTip": "QL_Cong_Viec\\Views\\Flights\\Details.cshtml",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAYwM4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T06:03:28.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\.gitignore",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\.gitignore",
@@ -114,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Views\\Shared\\_Layout.cshtml",
@@ -126,19 +210,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Views\\Flights\\Index.cshtml",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Views\\Flights\\Index.cshtml",
               "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Views\\Flights\\Index.cshtml",
               "RelativeToolTip": "QL_Cong_Viec\\Views\\Flights\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-20T00:40:06.203Z"
+              "WhenOpened": "2025-09-20T00:40:06.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "ExchangeRate.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\ExchangeRate.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\ExchangeRate.cs",
@@ -150,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\ErrorViewModel.cs",
@@ -162,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "Distance.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\Distance.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\Distance.cs",
@@ -174,19 +259,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Views\\Hotels\\Index.cshtml",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Views\\Hotels\\Index.cshtml",
               "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Views\\Hotels\\Index.cshtml",
               "RelativeToolTip": "QL_Cong_Viec\\Views\\Hotels\\Index.cshtml",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwHEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-19T15:46:38.7Z"
+              "WhenOpened": "2025-09-19T15:46:38.7Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "FlightAggregatorService.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Service\\FlightAggregatorService.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Service\\FlightAggregatorService.cs",
@@ -198,20 +284,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\appsettings.json",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\appsettings.json",
               "ToolTip": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\appsettings.json",
               "RelativeToolTip": "QL_Cong_Viec\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-09-19T15:21:24.277Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Program.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Program.cs",
@@ -223,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "Weather.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\Weather.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\Weather.cs",
@@ -235,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\User.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\User.cs",
@@ -247,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "LocationInfo.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\LocationInfo.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\LocationInfo.cs",
@@ -259,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "Location.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\Location.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\Location.cs",
@@ -271,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "FlightDto.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\FlightDto.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\FlightDto.cs",
@@ -283,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "Hotel.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Models\\Hotel.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Models\\Hotel.cs",
@@ -295,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "HotelsController.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Controllers\\HotelsController.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Controllers\\HotelsController.cs",
@@ -307,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "FlightsController.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Controllers\\FlightsController.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Controllers\\FlightsController.cs",
@@ -319,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "HotelService.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Service\\HotelService.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Service\\HotelService.cs",
@@ -331,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "WikiService.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Service\\WikiService.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Service\\WikiService.cs",
@@ -343,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "FlightService.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Service\\FlightService.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Service\\FlightService.cs",
@@ -355,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "AmadeusService.cs",
               "DocumentMoniker": "D:\\QL_Cong_VIec_SOA\\QL_Cong_Viec\\QL_Cong_Viec\\Service\\AmadeusService.cs",
               "RelativeDocumentMoniker": "QL_Cong_Viec\\Service\\AmadeusService.cs",
