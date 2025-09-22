@@ -25,14 +25,22 @@ builder.Services.AddHttpClient<FlightService>();
 builder.Services.AddHttpClient<WikiService>();
 builder.Services.AddHttpClient<AmadeusService>();
 builder.Services.AddHttpClient<HotelService>();
+builder.Services.AddHttpClient<CountryService>();
+builder.Services.AddHttpClient<TimeService>();
+builder.Services.AddHttpClient<WeatherService>();
+builder.Services.AddHttpClient<CurrencyService>();
 
 // Add existing services
 builder.Services.AddScoped<FlightService>();
 builder.Services.AddScoped<WikiService>();
 builder.Services.AddScoped<AmadeusService>();
 builder.Services.AddScoped<HotelService>();
-builder.Services.AddScoped<FlightAggregatorService>(); 
+builder.Services.AddScoped<FlightAggregatorService>();
 
+builder.Services.AddSingleton<CountryService>();
+builder.Services.AddSingleton<TimeService>();
+builder.Services.AddSingleton<WeatherService>();
+builder.Services.AddSingleton<CurrencyService>();
 // Add memory cache for ESB caching service
 builder.Services.AddMemoryCache();
 

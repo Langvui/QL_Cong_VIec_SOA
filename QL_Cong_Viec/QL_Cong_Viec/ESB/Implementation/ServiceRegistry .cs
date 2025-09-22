@@ -28,6 +28,10 @@ namespace QL_Cong_Viec.ESB.Implementation
                 RegisterService("AmadeusService", _serviceProvider.GetRequiredService<AmadeusServiceAdapter>());
                 RegisterService("WikiService", _serviceProvider.GetRequiredService<WikiServiceAdapter>());
                 RegisterService("HotelService", _serviceProvider.GetRequiredService<HotelServiceAdapter>());
+                RegisterService("CountryService", _serviceProvider.GetRequiredService<CountryServiceAdapter>());
+                RegisterService("TimeService", _serviceProvider.GetRequiredService<TimeServiceAdapter>());
+                RegisterService("WeatherService", _serviceProvider.GetRequiredService<WeatherServiceAdapter>());
+                RegisterService("CurrencyService", _serviceProvider.GetRequiredService<CurrencyServiceAdapter>());
 
                 _logger.LogInformation("Auto-registered all services successfully");
             }
